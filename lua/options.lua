@@ -5,3 +5,6 @@ vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.cmdheight = 0
 vim.opt.termguicolors = true
+vim.opt.fillchars = { eob = " " }
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300

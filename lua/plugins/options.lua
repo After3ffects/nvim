@@ -1,3 +1,3 @@
-vim.cmd("colorscheme midnight")
+vim.cmd("colorscheme moonfly")
 builtin = require('telescope.builtin')
-require("bufferline").setup{}
+--require("bufferline").setup{}

@@ -18,10 +18,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
 	{
-  		"dasupradyumna/midnight.nvim",
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
 		lazy = false,
   		priority = 1000,
-        opts = {}
 	},
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -41,16 +41,27 @@ require("lazy").setup({
         lazy = false, -- neo-tree will lazily load itself
     },
     {
-        lazy = false,
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        opts = {options = { theme = 'dracula' }}
+        opts = { options = { theme = 'auto' }}
     },
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'}
+    {
+       'lewis6991/gitsigns.nvim',
+        opts = {
+          signs = {
+            add = { text = '+' },
+            change = { text = '~' },
+            delete = { text = '_' },
+            topdelete = { text = '‾' },
+            changedelete = { text = '~' },
+            },
+        },
+    }, 
+    --{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'}
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "midnight" } },
+  install = { colorscheme = { "moonfly" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
