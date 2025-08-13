@@ -57,6 +57,19 @@ require("lazy").setup({
             },
         },
     }, 
+    {
+        "mason-org/mason.nvim",
+        opts = {},
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            "mason-org/mason.nvim", opts = {},
+            "neovim/nvim-lspconfig",
+        },
+        
+    },
     --{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'}
   },
   -- Configure any other settings here. See the documentation for more details.
