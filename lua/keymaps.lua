@@ -21,7 +21,12 @@ end
 vim.keymap.set('i', '{', '{}<Left>')
 vim.keymap.set('i', '(', '()<Left>')
 vim.keymap.set('i', '[', '[]<Left>')
+vim.keymap.set('i', '\'', '\'\'<Left>', { expr = true})
+vim.keymap.set('i', '"', '\"\"<Left>')
 
 vim.keymap.set('i', '}', function() return keyskip('}') end, { expr = true, noremap = true})
 vim.keymap.set('i', ')', function() return keyskip(')') end, { expr = true, noremap = true})
 vim.keymap.set('i', ']', function() return keyskip(']') end, { expr = true, noremap = true})
+vim.keymap.set('i', '\'', function() return keyskip('\'') end, { expr = true, noremap = true})
+vim.keymap.set('i', '"', function() return keyskip('"') end, { expr = true, noremap = true})
+
