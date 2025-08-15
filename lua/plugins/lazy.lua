@@ -18,11 +18,19 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
 	{
-        "bluz71/vim-moonfly-colors",
+        "dasupradyumna/midnight.nvim",
         name = "moonfly",
 		lazy = false,
   		priority = 1000,
 	},
+    --[[
+    {
+        "yorumicolors/yorumi.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    ]]
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
 		dependencies = { 'nvim-lua/plenary.nvim' }
@@ -74,7 +82,7 @@ require("lazy").setup({
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "moonfly" } },
+  install = { colorscheme = { "midnight" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
