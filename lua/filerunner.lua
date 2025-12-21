@@ -10,7 +10,7 @@ M.runfile = function()
     vim.cmd(write)
 
     if filetype == "c" then
-        local command = string.format([[botright 12split | terminal cmd.exe /k "cd /d %s && gcc "%s" -o "%s" && "%s.exe" && del "%s.exe""]], directory, filepath, filename, filename, filename)
+        local command = string.format([[botright 12split | terminal cmd.exe /k "cd /d %s && gcc "%s" -o "%s" && "%s.exe" && rm -f "%s.exe""]], directory, filepath, filename, filename, filename)
         vim.cmd(command)
     elseif filetype == "python" then
         local command = string.format(":terminal cmd='cd %s && python %s' <CR>", directory, filepath)
