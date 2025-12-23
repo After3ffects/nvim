@@ -17,12 +17,14 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
+    --[[
 	{
         "dasupradyumna/midnight.nvim",
         name = "moonfly",
 		lazy = false,
   		priority = 1000,
 	},
+    ]]
     --[[
     {
         "yorumicolors/yorumi.nvim",
@@ -31,12 +33,23 @@ require("lazy").setup({
         opts = {},
     },
     ]]
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
+    {
+        "mason-org/mason.nvim",
+        opts = {}
+    },
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
 		dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
-        "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"
+        "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate",
+        opts = { highlight = { enable = true }, ensure_installed = { "lua", "python" } }
     },
     {
         "nvim-neo-tree/neo-tree.nvim",
