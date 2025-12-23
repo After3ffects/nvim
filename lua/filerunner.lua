@@ -17,4 +17,21 @@ M.runfile = function()
         vim.cmd(command)
     end
 end 
+
+M.runfileVenv = function()
+    local filetype = vim.bo.filetype
+    local filepath = vim.fn.expand('%:p')             -- Get the full path of the current file
+    local directory = vim.fn.fnamemodify(filepath, ':h') -- Get the directory of the file
+    local filename = vim.fn.expand('%:t:r')
+    local write = ":wa"
+
+    vim.cmd(write)
+
+    local command = string.format(
+        "botright 12split | terminal bash -lc 'cd %q && source .venv/bin/activate && python %q'",
+        directory, filepath
+      )
+    vim.cmd(command)
+end
+    
 return M 
