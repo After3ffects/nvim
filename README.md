@@ -1,5 +1,4 @@
 For NVIM v0.11.3
-Windows 10/11
 
 Ideas:
 - Toggle color plugins from a list of colorschemes
