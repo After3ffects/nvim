@@ -22,7 +22,7 @@ M.runfile = function()
                 directory, filepath, filename, filename, filename)
         end
     elseif filetype == "python" then
-        local command = string.format(":botright 12split | terminal cd %s && python %s", directory, filepath)
+        command = string.format(":botright 12split | terminal cd %s && python %s", directory, filepath)
     end
 
     if command then
